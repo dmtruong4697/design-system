@@ -1,17 +1,18 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native'
 import React from 'react'
+import ColorsSkin from '../Styles/ColorsSkin';
 
 const Icons = (props) => {
 
-    const { size, uri } = props;
+    const { size, uri} = props;
 
-    const sizeStyle = {
-        width: size,
-        height: size,
-    }
+    // const sizeStyle = {
+    //     width: size,
+    //     height: size,
+    // }
   return (
-    <View style={[styles.container, sizeStyle]}>
-        <Image source={{uri: uri}}></Image>
+    <View style={styles.container}>
+        <Image source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}></Image>
     </View>
   )
 }
@@ -20,9 +21,11 @@ export default Icons
 
 const styles = StyleSheet.create({
     container: {
-        alignContent: 'center',
-        alignItems: 'center',
-        backgroundColor: 'black',
+        width: 20,
+        height:20,
+        //alignContent: 'center',
+        //alignItems: 'center',
+        backgroundColor: ColorsSkin.Gray_4Background,
         margin: 5,
         borderRadius: 100,
     },

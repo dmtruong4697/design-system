@@ -7,25 +7,18 @@ const ToolTipArrow = (props) => {
     const {rotate} = props;
 
     const transformStyle = {
-        transform: [{ rotate: "0deg" }],
+        transform: [{ rotate: rotate }],
     }
 
   return (
-    <View style={styles.container}>
         <View style={[styles.arrow, transformStyle]}>
         </View>
-    </View>
   )
 }
 
 export default ToolTipArrow
 
 const styles = StyleSheet.create({
-    container: {
-        height: 10,
-        width: 10,
-        backgroundColor: 'red',
-    },
     arrow: {
         width: 0,
         height: 0,
