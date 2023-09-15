@@ -80,5 +80,64 @@ const TypoSkin ={
         lineHeght :16,
         fontWeght :'Regular',
     },
+    Subtitle1 :{
+        fontSize: 16,
+        lineHeght:24,
+        fontWeght :'Regular',
+
+    },
+    Subtitle2 :{
+        fontSize: 14,
+        lineHeght:22,
+        fontWeght :'Regular',
+
+    },
+    Subtitle3 :{
+        fontSize: 12,
+        lineHeght:16,
+        fontWeght :'Regular',
+
+    },
+    Subtitle4 :{
+        fontSize: 10,
+        lineHeght:14,
+        fontWeght :'Regular',
+
+    },
+    Label1 :{
+        fontSize: 16,
+        lineHeght: 24,
+        fontWeght :'Medium',
+    },
+    Label2 :{
+        fontSize: 16,
+        lineHeght: 22,
+        fontWeght :'Regular',
+    },
+    Label3 :{
+        fontSize: 14,
+        lineHeght: 22,
+        fontWeght :'Medium',
+    },
+    Label4 :{
+        fontSize: 14,
+        lineHeght: 22,
+        fontWeght :'Regular',
+    },
+    Label5 :{
+        fontSize: 12,
+        lineHeght: 16,
+        fontWeght :'Regular',
+    },
+    Placeholder :{
+        fontSize: 16,
+        lineHeght: 28,
+        fontWeght :'Regular',
+    },
+    Placeholder :{
+        fontSize: 16,
+        lineHeght: 28,
+        fontWeght :'Regular',
+    },
       
 }
