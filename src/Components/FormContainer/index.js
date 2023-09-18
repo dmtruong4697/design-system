@@ -1,11 +1,10 @@
-import React, {createContext} from 'react';
-import {Controller, useForm} from 'react-hook-form';
-import {Button, Text, TextInput, View} from 'react-native';
-import CustomInputField from '../CustomInputField';
-import PropTypes, {any, oneOfType} from 'prop-types';
-import {InputType} from '../../constants/constants';
-import CustomCheckBox from '../CustomCheckBox';
-import {AppColors} from '../../constants/AppStyle';
+import React, { createContext } from "react";
+import { Controller, useForm } from "react-hook-form";
+import { Button, Text, TextInput, View } from "react-native";
+import CustomInputField from "../CustomInputField";
+import PropTypes, { any, oneOfType } from "prop-types";
+import { InputType } from "../../constants/constants";
+import CustomCheckBox from "../CustomCheckBox";
 
 FormContainer.propTypes = {
   onSubmitting: PropTypes.func,
@@ -22,27 +21,27 @@ FormContainer.defaultProps = {
 };
 
 function FormContainer(props) {
-  const {children, onSubmitting, fields, customSubmitButton, onChangeForm} =
+  const { children, onSubmitting, fields, customSubmitButton, onChangeForm } =
     props;
 
   const {
     control,
     resetField,
     handleSubmit,
-    formState: {errors},
+    formState: { errors },
   } = useForm({
     defaultValues: defaultValueFilter,
   });
 
   const textInput = (field, index, errors) => {
-    const {label, name, placeholder, rules} = field;
+    const { label, name, placeholder, rules } = field;
     return (
       <CustomInputField
         control={control}
         onReset={resetField}
-        rules={{...rules}}
+        rules={{ ...rules }}
         borderWidth={1}
-        borderColor={'black'}
+        borderColor={"black"}
         name={name}
         key={index}
         onChangeText={onChangeForm}
@@ -54,7 +53,7 @@ function FormContainer(props) {
   };
 
   const checkbox = (field, index) => {
-    const {label, name, required} = field;
+    const { label, name, required } = field;
     return (
       <CustomCheckBox
         control={control}
@@ -67,7 +66,7 @@ function FormContainer(props) {
     );
   };
 
-  const _renderContent = errors =>
+  const _renderContent = (errors) =>
     fields &&
     fields.map((field, index) => {
       switch (field?.type) {
@@ -82,12 +81,12 @@ function FormContainer(props) {
 
   const defaultValueFilter = {};
   fields.forEach(
-    field =>
+    (field) =>
       (defaultValueFilter[field.name] =
-        field?.type === InputType.checkBox ? false : ''),
+        field?.type === InputType.checkBox ? false : ""),
   );
 
-  const onSubmit = data => onSubmitting(data);
+  const onSubmit = (data) => onSubmitting(data);
 
   const sayHello = () => {
     console.log(errors);

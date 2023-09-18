@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import {
   Animated,
   Image,
@@ -7,12 +7,12 @@ import {
   TextInput,
   TouchableOpacity,
   View,
-} from 'react-native';
-import PropTypes, {any, oneOfType} from 'prop-types';
-import {AppIcons} from '../../constants/AppResource';
-import {AppColors, AppTextStyle} from '../../constants/AppStyle';
-import {Controller, useForm} from 'react-hook-form';
-import {KeyboardTypes} from '../../constants/constants';
+} from "react-native";
+import PropTypes, { any, oneOfType } from "prop-types";
+import { AppColors, AppTextStyle } from "../../constants/AppStyle";
+import { Controller, useForm } from "react-hook-form";
+import { KeyboardTypes } from "../../constants/constants";
+import { AppIcons } from "../../constants/AppResource";
 
 CustomInputField.propTypes = {
   name: PropTypes.string,
@@ -48,20 +48,20 @@ CustomInputField.propTypes = {
 };
 
 CustomInputField.defaultProps = {
-  name: '',
-  status: 'default',
+  name: "",
+  status: "default",
   style: {},
   backgroundColor: AppColors.white,
   borderWidth: 1,
-  borderColor: 'transparent',
+  borderColor: "transparent",
   borRadius: 8,
   prefixIcon: AppIcons.icSearch.default,
   suffixIcon: AppIcons.icClear,
   height: 50,
   width: 200,
-  placeholder: 'Placeholder',
-  value: '',
-  label: 'Label',
+  placeholder: "Placeholder",
+  value: "",
+  label: "Label",
   alertColor: AppColors.error,
   control: any,
   errors: {},
@@ -127,61 +127,65 @@ function CustomInputField(props) {
       <View
         style={{
           backgroundColor:
-            status === 'disable' ? AppColors.disable : AppColors.white,
-          display: 'flex',
-          flexDirection: 'row',
-          alignItems: 'center',
+            status === "disable" ? AppColors.disable : AppColors.white,
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
           height: height,
           borderRadius: borRadius,
           width: width,
           borderWidth: borderWidth,
           borderColor: errors && errors[name] ? alertColor : borderColor,
           paddingHorizontal: 15,
-        }}>
+        }}
+      >
         <View
           style={{
-            height: '100%',
-            justifyContent: 'center',
-            alignItems: 'center',
-          }}>
-          <Image source={prefixIcon} style={{resizeMode: 'contain'}} />
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image source={prefixIcon} style={{ resizeMode: "contain" }} />
         </View>
         <View
           style={{
             flex: 1,
             // backgroundColor: 'red',
-            height: '100%',
-            justifyContent: 'center',
-          }}>
-          <View style={{height: '50%'}}>
+            height: "100%",
+            justifyContent: "center",
+          }}
+        >
+          <View style={{ height: "50%" }}>
             <Text
               style={{
                 color:
-                  status === 'disable'
-                    ? 'rgba(191, 191, 191, 1)'
+                  status === "disable"
+                    ? "rgba(191, 191, 191, 1)"
                     : AppColors.primary,
                 ...AppTextStyle.regular1,
-              }}>
+              }}
+            >
               {label}
             </Text>
           </View>
-          <View style={{height: '50%'}}>
+          <View style={{ height: "50%" }}>
             {control && name && (
               <Controller
                 control={control}
                 rules={rules}
-                render={({field: {onChange, onBlur, value}}) => (
+                render={({ field: { onChange, onBlur, value } }) => (
                   <TextInput
                     keyboardType={keyboardType}
                     placeholder={placeholder}
-                    style={{margin: 0, padding: 0}}
+                    style={{ margin: 0, padding: 0 }}
                     onBlur={onBlur}
-                    onChangeText={value => {
+                    onChangeText={(value) => {
                       onChange(value);
                       onChangeText(name, value);
                     }}
                     value={value}
-                    editable={!(status === 'disable')}
+                    editable={!(status === "disable")}
                   />
                 )}
                 name={name}
@@ -193,8 +197,9 @@ function CustomInputField(props) {
           onPress={() => {
             Keyboard.dismiss();
             onReset(name);
-          }}>
-          <Image source={suffixIcon} style={{resizeMode: 'contain'}} />
+          }}
+        >
+          <Image source={suffixIcon} style={{ resizeMode: "contain" }} />
         </TouchableOpacity>
       </View>
       <Animated.View
@@ -207,12 +212,14 @@ function CustomInputField(props) {
             inputRange: [0, 1],
             outputRange: [0, 1],
           }),
-        }}>
+        }}
+      >
         {errors && errors[name] && (
           <Text
             style={{
               color: alertColor && alertColor,
-            }}>
+            }}
+          >
             {errors[name].message}
           </Text>
         )}

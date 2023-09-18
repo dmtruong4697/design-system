@@ -1,10 +1,9 @@
-import React, {useEffect, useRef} from 'react';
-import {Animated, Text, View} from 'react-native';
-import {AppIcons} from '../../constants/AppResource';
-import PropTypes, {any} from 'prop-types';
-import {Controller} from 'react-hook-form';
-import {AppColors} from '../../constants/AppStyle';
-import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import React, { useEffect, useRef } from "react";
+import { Animated, Text, View } from "react-native";
+import PropTypes, { any } from "prop-types";
+import { Controller } from "react-hook-form";
+import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { AppColors } from "../../constants/AppStyle";
 
 CustomCheckBox.propTypes = {
   control: PropTypes.any,
@@ -28,18 +27,18 @@ CustomCheckBox.defaultProps = {
   control: any,
   required: {
     value: false,
-    message: '',
+    message: "",
   },
-  name: '',
+  name: "",
   errors: {},
   alertColor: AppColors.error,
-  label: 'Label',
+  label: "Label",
   checkedIconSource: undefined,
-  fillColor: 'red',
-  unfillColor: 'white',
-  iconStyle: {borderColor: 'black'},
-  innerIconStyle: {borderWidth: 2},
-  textStyle: {fontFamily: 'JosefinSans-Regular'},
+  fillColor: "red",
+  unfillColor: "white",
+  iconStyle: { borderColor: "black" },
+  innerIconStyle: { borderWidth: 2 },
+  textStyle: { fontFamily: "JosefinSans-Regular" },
 };
 
 function CustomCheckBox(props) {
@@ -68,7 +67,7 @@ function CustomCheckBox(props) {
         duration: 300,
         useNativeDriver: false,
       }).start();
-      console.log('have error');
+      console.log("have error");
     } else {
       Animated.timing(animated, {
         toValue: 0,
@@ -82,17 +81,18 @@ function CustomCheckBox(props) {
     <>
       <View
         style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-        }}>
-        <Text style={{flex: 1, marginHorizontal: 10}} numberOfLines={2}>
+          flexDirection: "row",
+          alignItems: "center",
+        }}
+      >
+        <Text style={{ flex: 1, marginHorizontal: 10 }} numberOfLines={2}>
           {label}
         </Text>
         <Controller
           control={control}
-          rules={{required: {...required}}}
+          rules={{ required: { ...required } }}
           name={name}
-          render={({field: {onChange, onBlur, value}}) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <BouncyCheckbox
               size={25}
               fillColor={fillColor}
@@ -102,7 +102,7 @@ function CustomCheckBox(props) {
               checkIconImageSource={checkedIconSource}
               innerIconStyle={innerIconStyle}
               textStyle={textStyle}
-              onPress={isChecked => {
+              onPress={(isChecked) => {
                 onChange(isChecked);
               }}
             />
@@ -119,9 +119,10 @@ function CustomCheckBox(props) {
             inputRange: [0, 1],
             outputRange: [0, 1],
           }),
-        }}>
+        }}
+      >
         {errors && errors[name] && (
-          <Text style={{color: alertColor && alertColor}}>
+          <Text style={{ color: alertColor && alertColor }}>
             {errors[name].message}
           </Text>
         )}
