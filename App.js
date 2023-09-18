@@ -15,26 +15,32 @@ import DateElement from './Components/DateElement';
 import NumberPicker from './Components/NumberPicker';
 import PaginationItems from './Components/PaginationItems';
 import Card from './Components/Card';
+import Diviver from './Components/Divider';
+import MenuItems from './Components/MenuItems';
+import Pagination from './Components/Pagination/Pagination';
+import Popup from './Components/Popup/Popup';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <Button
+
+
+       {/* <Button
         style='Solid'
         size={48}
         state='Primary'
         position='IconLeft'
         content='Button'
-      ></Button> */}
+      ></Button> 
 
-      {/* <CheckBox 
+       <CheckBox 
         size={24}
         check='Yes'
         state='Active'
         label='Yes'
         labelPosition='Right'
-      ></CheckBox>  */}
-      {/* <ProgressBar
+      ></CheckBox>  
+      <ProgressBar
         status='Default'
         percentage='90%'
       ></ProgressBar>
@@ -45,57 +51,112 @@ export default function App() {
         state='Active'
         label='Yes'
         labelPosition='Right'
-      ></RadioButton> */}
+      ></RadioButton>
 
-      {/* <Switch
+       <Switch
         label='No'
         labelPosition='Right'
         Switch='No'
         state='Disable'
-      ></Switch> */}
+      ></Switch> 
 
-      {/* <ToolTip
+      <ToolTip
         arrowPosition='Bottom'
         align='Center'
         message='Message Message Message '
-      ></ToolTip> */}
+      ></ToolTip>
 
-      {/* <Image style={styles.image} source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/> */}
+       <Image style={styles.image} source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>
 
-      {/* <Tag
+       <Tag
         size={48}
         position='IconRight'
         content='Tag'
-      ></Tag> */}
+      ></Tag> 
 
-      {/* <ScrollBar
+       <ScrollBar
         style='Horizontal'
-      ></ScrollBar> */}
+      ></ScrollBar> 
 
-      {/* <DateElement
+      <DateElement
         state='Present'
         eventBadge='Yes'
         content='7'
-      ></DateElement> */}
+      ></DateElement>
 
-      {/* <NumberPicker
+      <NumberPicker
         style='Ghost'
         size={24}
-      ></NumberPicker> */}
+      ></NumberPicker> 
 
-      {/* <PaginationItems
+      <PaginationItems
         status='Active'
         content={1}
-      ></PaginationItems> */}
+      ></PaginationItems> 
 
-      <Card
+     <Card
         mediaPosition='MediaAbove'
         contentAlign='Right'
         actionView='Yes'
         mediaView='Yes'
         mediaBG="Yes"
         mediaBGUri='https://th.bing.com/th?id=ORMS.a66c2ad904c01fdb845a2704758a26df&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0'
-      ></Card>
+    ></Card> */}
+    <MenuItems 
+    data={[{
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdasdsfvds')
+      }
+    },
+    ]}
+    />
+   
+   <Pagination
+   Pags={[{
+    id : 1,
+    action : () =>{
+      console.log('asdas')
+    }},
+    {id : 2,
+    action : () =>{
+      console.log('asdas')
+    }},
+    {id : 3,
+    action : () =>{
+      console.log('asdas')
+    }},
+    {id : 4,
+    action : () =>{
+      console.log('asdas')
+    }}
+   ]}
+   ></Pagination>
+   <Popup></Popup>
 
     </View>
   );
@@ -104,9 +165,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: ColorsSkin.OnColorBackground,
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: 'white',
+    paddingTop:100
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 
   image: {

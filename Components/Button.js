@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import ColorsStyle from '../Styles/ColorsStyle';
 import ColorsSkin from '../Styles/ColorsSkin';
@@ -114,13 +114,11 @@ const Button = (props) => {
     }
 
   return (
-    <View>
-    <Pressable style={[styles.container, sizeStyle, styleStyle]}>
+    <TouchableOpacity style={[styles.container, sizeStyle, styleStyle]}>
         { (position === 'IconLeft' || position === 'IconOnly') && <Icons size={20}></Icons>}
         { position !== 'IconOnly' && <Text style={[textColorStyle]}>{content}</Text>}
         { position === 'IconRight' && <Icons size={20}></Icons>}
-    </Pressable>
-    </View>
+    </TouchableOpacity>
   )
 }
 
