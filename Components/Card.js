@@ -2,7 +2,7 @@ import { ImageBackground, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ColorsSkin from '../Styles/ColorsSkin';
 import ColorsStyle from '../Styles/ColorsStyle';
-import Button from './Button';
+import Button from './Button/Button';
 
 const Card = (props) => {
 

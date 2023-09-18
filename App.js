@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TextInput, ImageBackground } from 'react-native';
 import ColorsStyle from './Styles/ColorsStyle';
 import ColorsSkin from './Styles/ColorsSkin';
-import Button from './Components/Button';
+import Button from './Components/Button/Button';
 import CheckBox from './Components/CheckBox';
 import ProgressBar from './Components/ProgressBar';
 import RadioButton from './Components/RadioButton';
@@ -15,17 +15,22 @@ import DateElement from './Components/DateElement';
 import NumberPicker from './Components/NumberPicker';
 import PaginationItems from './Components/PaginationItems';
 import Card from './Components/Card';
+import ActionState from './Components/ActionSheet/ActionState';
+import ActionSheet from './Components/ActionSheet/ActionSheet';
+import MediaView from './Components/MediaView';
+import ContentText from './Components/ContentText';
+import ListTitle from './Components/ListTitle';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      {/* <Button
-        style='Solid'
+      <Button
+        style='Dash'
         size={48}
-        state='Primary'
+        state='Error'
         position='IconLeft'
         content='Button'
-      ></Button> */}
+      ></Button>
 
       {/* <CheckBox 
         size={24}
@@ -88,15 +93,44 @@ export default function App() {
         content={1}
       ></PaginationItems> */}
 
-      <Card
+      {/* <Card
         mediaPosition='MediaAbove'
         contentAlign='Right'
         actionView='Yes'
         mediaView='Yes'
         mediaBG="Yes"
         mediaBGUri='https://th.bing.com/th?id=ORMS.a66c2ad904c01fdb845a2704758a26df&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0'
-      ></Card>
+      ></Card> */}
 
+      {/* <ActionState
+        state='PositiveState'
+        content='Action'
+      ></ActionState> */}
+
+      <ActionSheet
+        WithSubtitle='No'
+      ></ActionSheet>
+
+      {/* <MediaView
+        style='oundingBoxCircle'
+        size={183}
+      ></MediaView> */}
+
+      {/* <ContentText
+        contentAlign='Center'
+        subTitle='Yes'
+        body='Yes'
+        titleContent='Title'
+        subTitleContent='Sub title'
+        bodyContent='Body content'
+      ></ContentText> */}
+
+      <ListTitle
+        contentViewAlign='Left'
+        withMedia='Yes'
+      ></ListTitle>
+
+      {/* <Image style={styles.image} source={{uri: 'https://icons.veryicon.com/png/o/miscellaneous/mlxc-public-icon-library/right-direction-1.png'}}></Image> */}
     </View>
   );
 }
@@ -104,7 +138,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: ColorsSkin.OnColorBackground,
+    backgroundColor: ColorsStyle.lime_3,
     alignItems: 'center',
     justifyContent: 'center',
   },

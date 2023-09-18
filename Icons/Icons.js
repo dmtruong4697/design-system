@@ -12,7 +12,7 @@ const Icons = (props) => {
     // }
   return (
     <View style={styles.container}>
-        <Image source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}></Image>
+        <Image style={styles.image} source={{uri: 'https://icons.veryicon.com/png/o/miscellaneous/mlxc-public-icon-library/right-direction-1.png'}}></Image>
     </View>
   )
 }
@@ -20,12 +20,12 @@ const Icons = (props) => {
 export default Icons
 
 const styles = StyleSheet.create({
-    container: {
+    image: {
         width: 20,
         height:20,
         //alignContent: 'center',
         //alignItems: 'center',
-        backgroundColor: ColorsSkin.Gray_4Background,
+        //backgroundColor: ColorsSkin.Gray_4Background,
         margin: 5,
         borderRadius: 100,
     },

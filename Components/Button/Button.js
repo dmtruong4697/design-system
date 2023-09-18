@@ -1,8 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import ColorsStyle from '../Styles/ColorsStyle';
-import ColorsSkin from '../Styles/ColorsSkin';
-import Icons from '../Icons/Icons';
+import ColorsStyle from '../../Styles/ColorsStyle';
+import ColorsSkin from '../../Styles/ColorsSkin';
+import Icons from '../../Icons/Icons';
 
 const Button = (props) => {
     
@@ -58,6 +58,14 @@ const Button = (props) => {
                 borderColor: stateColor,
             }
             textColor = stateColor;
+        break;
+        case 'TextAction':
+            styleStyle = {
+                backgroundColor: null,
+                borderColor: stateColor,
+            }
+            textColor = stateColor;
+        break;
     }
 
     switch (size) {
@@ -105,6 +113,13 @@ const Button = (props) => {
                 borderRadius: 4,
             }
         break;
+    }
+
+    if(style === 'TextAction') {
+        sizeStyle.paddingRight = 0;
+        sizeStyle.paddingBottom = 0;
+        sizeStyle.paddingLeft = 0;
+        sizeStyle.paddingTop = 0;
     }
 
     const textColorStyle = {

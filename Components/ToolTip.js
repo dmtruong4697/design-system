@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ToolTipArrow from './ToolTipArrow'
-import Button from './Button'
+import Button from './Button/Button'
 
 const ToolTip = (props) => {
 
