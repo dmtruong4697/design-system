@@ -15,31 +15,36 @@ import DateElement from './Components/DateElement';
 import NumberPicker from './Components/NumberPicker';
 import PaginationItems from './Components/PaginationItems';
 import Card from './Components/Card';
-import ActionState from './Components/ActionSheet/ActionState';
-import ActionSheet from './Components/ActionSheet/ActionSheet';
-import MediaView from './Components/MediaView';
-import ContentText from './Components/ContentText';
-import ListTitle from './Components/ListTitle';
+import Diviver from './Components/Divider';
+import MenuItems from './Components/MenuItems';
+import Pagination from './Components/Pagination/Pagination';
+import Popup from './Components/Popup/Popup';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Button
-        style='Dash'
+
+
+       {/* <Button
+        style='Solid'
         size={48}
         state='Error'
         position='IconLeft'
         content='Button'
+<<<<<<< HEAD
       ></Button>
+=======
+      ></Button> 
+>>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
 
-      {/* <CheckBox 
+       <CheckBox 
         size={24}
         check='Yes'
         state='Active'
         label='Yes'
         labelPosition='Right'
-      ></CheckBox>  */}
-      {/* <ProgressBar
+      ></CheckBox>  
+      <ProgressBar
         status='Default'
         percentage='90%'
       ></ProgressBar>
@@ -50,57 +55,120 @@ export default function App() {
         state='Active'
         label='Yes'
         labelPosition='Right'
-      ></RadioButton> */}
+      ></RadioButton>
 
-      {/* <Switch
+       <Switch
         label='No'
         labelPosition='Right'
         Switch='No'
         state='Disable'
-      ></Switch> */}
+      ></Switch> 
 
-      {/* <ToolTip
+      <ToolTip
         arrowPosition='Bottom'
         align='Center'
         message='Message Message Message '
-      ></ToolTip> */}
+      ></ToolTip>
 
-      {/* <Image style={styles.image} source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/> */}
+       <Image style={styles.image} source={{uri: 'https://reactnative.dev/img/tiny_logo.png',}}/>
 
-      {/* <Tag
+       <Tag
         size={48}
         position='IconRight'
         content='Tag'
-      ></Tag> */}
+      ></Tag> 
 
-      {/* <ScrollBar
+       <ScrollBar
         style='Horizontal'
-      ></ScrollBar> */}
+      ></ScrollBar> 
 
-      {/* <DateElement
+      <DateElement
         state='Present'
         eventBadge='Yes'
         content='7'
-      ></DateElement> */}
+      ></DateElement>
 
-      {/* <NumberPicker
+      <NumberPicker
         style='Ghost'
         size={24}
-      ></NumberPicker> */}
+      ></NumberPicker> 
 
-      {/* <PaginationItems
+      <PaginationItems
         status='Active'
         content={1}
-      ></PaginationItems> */}
+      ></PaginationItems> 
 
+<<<<<<< HEAD
       {/* <Card
+=======
+     <Card
+>>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
         mediaPosition='MediaAbove'
         contentAlign='Right'
         actionView='Yes'
         mediaView='Yes'
         mediaBG="Yes"
         mediaBGUri='https://th.bing.com/th?id=ORMS.a66c2ad904c01fdb845a2704758a26df&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0'
+<<<<<<< HEAD
       ></Card> */}
+=======
+    ></Card> */}
+    <MenuItems 
+    data={[{
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdas')
+      }
+    },
+    {
+      title:'Phuong',
+      action: () => {
+        console.log('asdasdsfvds')
+      }
+    },
+    ]}
+    />
+   
+   <Pagination
+   Pags={[{
+    id : 1,
+    action : () =>{
+      console.log('asdas')
+    }},
+    {id : 2,
+    action : () =>{
+      console.log('asdas')
+    }},
+    {id : 3,
+    action : () =>{
+      console.log('asdas')
+    }},
+    {id : 4,
+    action : () =>{
+      console.log('asdas')
+    }}
+   ]}
+   ></Pagination>
+   <Popup></Popup>
+>>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
 
       {/* <ActionState
         state='PositiveState'
@@ -138,9 +206,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+<<<<<<< HEAD
     backgroundColor: ColorsStyle.lime_3,
     alignItems: 'center',
     justifyContent: 'center',
+=======
+    backgroundColor: 'white',
+    paddingTop:100
+    // alignItems: 'center',
+    // justifyContent: 'center',
+>>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
   },
 
   image: {
