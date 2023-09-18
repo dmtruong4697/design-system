@@ -31,11 +31,7 @@ export default function App() {
         state='Error'
         position='IconLeft'
         content='Button'
-<<<<<<< HEAD
-      ></Button>
-=======
       ></Button> 
->>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
 
        <CheckBox 
         size={24}
@@ -98,11 +94,7 @@ export default function App() {
         content={1}
       ></PaginationItems> 
 
-<<<<<<< HEAD
       {/* <Card
-=======
-     <Card
->>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
         mediaPosition='MediaAbove'
         contentAlign='Right'
         actionView='Yes'
