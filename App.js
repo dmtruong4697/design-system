@@ -109,9 +109,6 @@ export default function App() {
         mediaView='Yes'
         mediaBG="Yes"
         mediaBGUri='https://th.bing.com/th?id=ORMS.a66c2ad904c01fdb845a2704758a26df&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0'
-<<<<<<< HEAD
-      ></Card> */}
-=======
     ></Card> */}
     <MenuItems 
     data={[{
@@ -168,7 +165,6 @@ export default function App() {
    ]}
    ></Pagination>
    <Popup></Popup>
->>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
 
       {/* <ActionState
         state='PositiveState'
@@ -206,16 +202,10 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-<<<<<<< HEAD
-    backgroundColor: ColorsStyle.lime_3,
-    alignItems: 'center',
-    justifyContent: 'center',
-=======
     backgroundColor: 'white',
     paddingTop:100
     // alignItems: 'center',
     // justifyContent: 'center',
->>>>>>> 00395b2adb71b96efc42c541e89f3f1534a8a96d
   },
 
   image: {
