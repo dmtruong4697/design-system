@@ -1,10 +1,10 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import ColorsSkin from '../Styles/ColorsSkin'
 
 const PaginationItems = (props) => {
 
-    const {status, content} = props;
+    const {status, content, onPressing} = props;
     let statusStyle, textStyle;
 
     switch (status) {
@@ -42,9 +42,9 @@ const PaginationItems = (props) => {
         break;
     }
   return (
-    <View style={[styles.container, statusStyle]}>
+    <TouchableOpacity style={[styles.container, statusStyle]} onPress={onPressing}>
       <Text style={[textStyle]}>{content}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 

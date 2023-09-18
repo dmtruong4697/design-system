@@ -141,3 +141,5 @@ const TypoSkin ={
     },
       
 }
+
+export default TypoSkin
