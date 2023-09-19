@@ -1,14 +1,13 @@
-import { StyleSheet, Text, View, Pressable } from 'react-native'
+import { StyleSheet, Text, View, Pressable, FlatList, } from 'react-native'
 import React from 'react'
 import ActionState from './ActionState'
-import ColorsSkin from '../../Styles/ColorsSkin'
-import TypoSkin from '../../Styles/TypoSkin'
 import ListTitle from '../ListTitle'
-import Button from '../Button/Button'
+import CustomButton from '../Button'
+import ColorsSkin from '../../../Styles/ColorsSkin'
 
 const ActionSheet = (props) => {
 
-    const {WithSubtitle, ItemNumber} = props;
+    const {WithSubtitle, ItemNumber, actionStateData} = props;
 
   return (
     <View style={styles.container}>
@@ -18,37 +17,27 @@ const ActionSheet = (props) => {
             withMedia='No'
           ></ListTitle>}
 
-          <Pressable>
-            <ActionState
-              state='PositiveState'
-              content='Action'
-            ></ActionState>
-          </Pressable>
-
-          <Pressable style={styles.ActionState}>
-            <ActionState
-              state='PositiveState'
-              content='Action'
-            ></ActionState>
-          </Pressable>
-
-          <Pressable style={styles.ActionState}>
-            <ActionState
-              state='PositiveState'
-              content='Action'
-            ></ActionState>
-          </Pressable>
-
+        <FlatList style={styles.flatList}
+            data={actionStateData}
+            renderItem={({item}) => 
+            <View style={styles.ActionState}>
+              <ActionState
+                state={item.state}
+                content={item.content}
+              ></ActionState>
+            </View>}
+            keyExtractor={item => item.id}
+        />
         </View>
 
         <View style={[styles.navigationBottom]}>
-          <Button
+          <CustomButton
             style='TextAction'
             size={48}
             state='Primary'
             position='TextOnly'
             content='Cancel'
-          ></Button>
+          ></CustomButton>
         </View>
     </View>
   )
@@ -61,7 +50,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         width: '90%',
         justifyContent: 'center',
-        
+        height: 'auto',
     },
     actionSheets: {
       backgroundColor: ColorsSkin.OnColorBackground,
@@ -76,5 +65,9 @@ const styles = StyleSheet.create({
     ActionState: {
       borderTopWidth: 1,
       borderTopColor: ColorsSkin.Disable
-    }
+    },
+    flatList: {
+      height: 'auto',
+      flexGrow: 0
+    },
 })

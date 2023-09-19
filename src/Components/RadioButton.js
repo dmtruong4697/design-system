@@ -1,9 +1,8 @@
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import React from 'react'
-import Icons from '../Icons/Icons';
-import ColorsSkin from '../Styles/ColorsSkin';
-import ColorsStyle from '../Styles/ColorsStyle';
 import { useState } from 'react';
+import ColorsSkin from '../../Styles/ColorsSkin';
+import ColorsStyle from '../../Styles/ColorsStyle';
 
 const RadioButton = (props) => {
 

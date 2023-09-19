@@ -1,7 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import ToolTipArrow from './ToolTipArrow'
-import Button from './Button/Button'
+import CustomButton from './Button';
+import ToolTipArrow from './ToolTipArrow';
 
 const ToolTip = (props) => {
 
@@ -109,13 +109,13 @@ const ToolTip = (props) => {
           rotate={rotate}
         ></ToolTipArrow>
       </View>
-      <Button
+      <CustomButton
         style='Solid'
         size={32}
         state='Primary'
         position='TextOnly'
         content={message}
-      ></Button>
+      ></CustomButton>
     </View>
   )
 }

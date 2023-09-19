@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View, Pressable, Image } from 'react-native'
 import React from 'react'
-import Icons from '../Icons/Icons';
-import ColorsSkin from '../Styles/ColorsSkin';
-import ColorsStyle from '../Styles/ColorsStyle';
+import Icons from './Icons/Icons';
+import ColorsSkin from '../../Styles/ColorsSkin';
+import ColorsStyle from '../../Styles/ColorsStyle';
 
 const CheckBox = (props) => {
 
@@ -52,7 +52,7 @@ const CheckBox = (props) => {
       {(label === 'Yes' && labelPosition === 'Left') && <Text style={{labelStyle}}>{labelContent}</Text>}
       <Pressable style={[sizeStyleCheckboxContainer]}>
         <View style={[sizeStyle]}>
-            { check === 'Yes' && <Icons size={10} uri='https://cdn.sstatic.net/Img/teams/teams-illo-free-sidebar-promo.svg?v=47faa659a05e'></Icons>}
+            { check === 'Yes' && <Icons size={10} uri='C:\Users\KyThuat88\design-system\src\assets\icon\logo\check.png'></Icons>}
         </View>
       </Pressable>
       {(label === 'Yes' && labelPosition === 'Right') && <Text style={{labelStyle}}>{labelContent}</Text>}

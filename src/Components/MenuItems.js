@@ -1,7 +1,5 @@
 import { Button, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
-import ColorsSkin from '../Styles/ColorsSkin';
-import TypoSkin from '../Styles/TypoSkin';
 
 
 const MenuItems = (props) => {

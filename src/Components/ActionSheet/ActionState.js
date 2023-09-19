@@ -1,9 +1,7 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
-import ColorsSkin from '../../Styles/ColorsSkin'
-import text_styles from '../../Styles/TextStyle'
-import TypoSkin from '../../Styles/TypoSkin'
-import Button from '../Button/Button'
+import ColorsSkin from '../../../Styles/ColorsSkin';
+import TypoSkin from '../../../Styles/TypoSkin';
 
 const ActionState = (props) => {
 

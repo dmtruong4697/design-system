@@ -1,12 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
-import ColorsSkin from '../Styles/ColorsSkin';
+import ColorsSkin from '../../Styles/ColorsSkin';
 
 const MediaView = (props) => {
 
-    const {style, size} = props;
+    const {style, size, mediaUri} = props;
 
-    const styleStyle = {
+    const mediaStyle = {
         borderRadius: (style === 'BoundingBoxCircle')? 1000:8,
         backgroundColor: ColorsSkin.Gray_3Background,
     }
@@ -17,11 +17,17 @@ const MediaView = (props) => {
     }
 
   return (
-    <View style={[styleStyle, sizeStyle]}>
+    <View style={[styles.container, sizeStyle, mediaStyle]}>
+      <Image style={[mediaStyle, sizeStyle]} source={{uri: mediaUri}}>
+      </Image>
     </View>
   )
 }
 
 export default MediaView
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: ColorsSkin.Gray_3Background,
+  }
+})

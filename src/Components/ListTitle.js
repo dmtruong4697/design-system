@@ -2,9 +2,7 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import MediaView from './MediaView'
 import ContentText from './ContentText'
-import ColorsSkin from '../Styles/ColorsSkin'
-import TypoSkin from '../Styles/TypoSkin'
-import Button from './Button/Button'
+import CustomButton from './Button'
 
 const ListTitle = (props) => {
 
@@ -58,13 +56,14 @@ const ListTitle = (props) => {
             bodyContent='Body content'
         ></ContentText>
 
-        {!(contentViewAlign === 'Center') && <Button
+        {!(contentViewAlign === 'Center') && <CustomButton
             style='TextAction'
             size={48}
             state='Primary'
             position='IconRight'
             content='Button'
-        ></Button>}
+            iconUri='https://icons.veryicon.com/png/o/miscellaneous/mlxc-public-icon-library/right-direction-1.png'
+        ></CustomButton>}
       </View>
 
         {(withMedia === 'Yes') && (contentViewAlign === 'Center') && <View style={[styles.media]}>  

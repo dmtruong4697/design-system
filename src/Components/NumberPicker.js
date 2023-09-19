@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import { useState } from 'react'
-import ColorsSkin from '../Styles/ColorsSkin'
+import ColorsSkin from '../../Styles/ColorsSkin';
 
 const NumberPicker = (props) => {
 

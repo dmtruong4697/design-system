@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import { useState } from 'react'
-import Button from '../Button'
+import CustomButton from '../Button'
 
 const Popup =(props) =>{
     return(
@@ -12,17 +12,17 @@ const Popup =(props) =>{
         <Text  style={{ textAlign: 'center'}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </Text>
       </View>
       <View style={{ flexDirection:'row',width:334}}>
-        <Button
+        <CustomButton
          
         style='Solid'
         size={40}
         state='Primary'
         content='Cancel'
-      ></Button>
-        <Button style='Solid'
+      ></CustomButton>
+        <CustomButton style='Solid'
         size={40}
         state='Primary'
-        content='Ok'></Button>
+        content='Ok'></CustomButton>
       </View>
 
     </View>

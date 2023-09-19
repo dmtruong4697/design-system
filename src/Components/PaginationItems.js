@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import ColorsSkin from '../Styles/ColorsSkin'
+import ColorsSkin from '../../Styles/ColorsSkin';
 
 const PaginationItems = (props) => {
 

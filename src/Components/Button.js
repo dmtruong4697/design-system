@@ -2,10 +2,10 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ColorsStyle from "../../Styles/ColorsStyle";
 import ColorsSkin from "../../Styles/ColorsSkin";
-import Icons from "../../Icons/Icons";
+import Icons from "./Icons/Icons";
 
-const Button = (props) => {
-  const { style, size, position, state, content } = props;
+const CustomButton = (props) => {
+  const { style, size, position, state, content, iconUri } = props;
 
   let styleStyle = {};
   let sizeStyle = {};
@@ -116,18 +116,18 @@ const Button = (props) => {
     <View>
       <Pressable style={[styles.container, sizeStyle, styleStyle]}>
         {(position === "IconLeft" || position === "IconOnly") && (
-          <Icons size={20}></Icons>
+          <Icons size={20} uri={iconUri}></Icons>
         )}
         {position !== "IconOnly" && (
           <Text style={[textColorStyle]}>{content}</Text>
         )}
-        {position === "IconRight" && <Icons size={20}></Icons>}
+        {position === "IconRight" && <Icons size={20} uri={iconUri}></Icons>}
       </Pressable>
     </View>
   );
 };
 
-export default Button;
+export default CustomButton;
 
 const styles = StyleSheet.create({
   container: {

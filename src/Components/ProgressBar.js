@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import ColorsSkin from '../Styles/ColorsSkin'
-import ColorsStyle from '../Styles/ColorsStyle'
+import ColorsSkin from '../../Styles/ColorsSkin';
 
 const ProgressBar = (props) => {
 

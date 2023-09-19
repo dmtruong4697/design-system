@@ -2,7 +2,7 @@ import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ColorsSkin from "../../Styles/ColorsSkin";
 import ColorsStyle from "../../Styles/ColorsStyle";
-import Button from "./Button";
+import CustomButton from "./Button";
 
 const Card = (props) => {
   const {
@@ -100,20 +100,20 @@ const Card = (props) => {
 
       {actionView === "Yes" && (
         <View style={[styles.actionCombo]}>
-          <Button
+          <CustomButton
             style="Solid"
             size={32}
             state="Success"
             position="TextOnly"
             content="Button"
-          ></Button>
-          <Button
+          ></CustomButton>
+          <CustomButton
             style="Solid"
             size={32}
             state="Primary"
             position="TextOnly"
             content="Button"
-          ></Button>
+          ></CustomButton>
         </View>
       )}
     </ImageBackground>

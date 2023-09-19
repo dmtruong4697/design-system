@@ -1,8 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import ColorsSkin from '../Styles/ColorsSkin'
-import ColorsStyle from '../Styles/ColorsStyle'
-import TypoSkin from '../Styles/TypoSkin'
+import TypoSkin from '../../Styles/TypoSkin';
 
 const ContentText = (props) => {
 

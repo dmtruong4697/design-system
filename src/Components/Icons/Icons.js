@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native'
 import React from 'react'
-import ColorsSkin from '../Styles/ColorsSkin';
 
 const Icons = (props) => {
 
@@ -12,7 +11,7 @@ const Icons = (props) => {
     // }
   return (
     <View style={styles.container}>
-        <Image style={styles.image} source={{uri: 'https://icons.veryicon.com/png/o/miscellaneous/mlxc-public-icon-library/right-direction-1.png'}}></Image>
+        <Image style={styles.image} source={{uri: uri}}></Image>
     </View>
   )
 }
