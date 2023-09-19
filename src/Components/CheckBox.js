@@ -8,15 +8,15 @@ const CheckBox = (props) => {
 
     const { size, check, label, labelPosition, state } = props;
     let stateColor = (state === 'Active')? ColorsSkin.PrimaryColor:ColorsSkin.DisableBackground;
-    let backgroundColor = (check === 'Yes')? stateColor:null;
-    if (state === 'Disable' && check === 'No') {backgroundColor = ColorsStyle.gray_3};
+    let backgroundColor = (check === true)? stateColor:null;
+    if (state === 'Disable' && check === false) {backgroundColor = ColorsStyle.gray_3};
 
     let labelContent = '';
     if(state === 'Active' ){
-        if(check === 'Yes') labelContent = 'Checked'
+        if(check === true) labelContent = 'Checked'
         else labelContent = 'Unchecked'
     } else{
-        if(check === 'No') labelContent = 'Disable-Unchecked'
+        if(check === false) labelContent = 'Disable-Unchecked'
         else labelContent = 'Disable-Checked'
     }
 
@@ -44,6 +44,8 @@ const CheckBox = (props) => {
         borderRadius: 4,
         borderWidth: (check === 'No')? 1:0,
         borderColor: ColorsStyle.gray_4,
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 
 
@@ -52,7 +54,7 @@ const CheckBox = (props) => {
       {(label === 'Yes' && labelPosition === 'Left') && <Text style={{labelStyle}}>{labelContent}</Text>}
       <Pressable style={[sizeStyleCheckboxContainer]}>
         <View style={[sizeStyle]}>
-            { check === 'Yes' && <Icons size={10} uri='C:\Users\KyThuat88\design-system\src\assets\icon\logo\check.png'></Icons>}
+            { check === 'Yes' && <Icons size={10} uri='https://cdn-icons-png.flaticon.com/512/18/18442.png'></Icons>}
         </View>
       </Pressable>
       {(label === 'Yes' && labelPosition === 'Right') && <Text style={{labelStyle}}>{labelContent}</Text>}
