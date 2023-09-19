@@ -4,7 +4,7 @@ import ListTitle from '../ListTitle'
 
 const ExpansionItem = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <ListTitle
         contentViewAlign='Left'
         withMedia='Yes'
@@ -15,4 +15,8 @@ const ExpansionItem = () => {
 
 export default ExpansionItem
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    width: 414,
+  }
+})

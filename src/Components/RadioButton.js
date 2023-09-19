@@ -6,19 +6,18 @@ import ColorsStyle from '../../Styles/ColorsStyle';
 
 const RadioButton = (props) => {
 
-    const { size, check, label, labelPosition, state } = props;
-    const [isChecked, setIsChecked] = useState(false);
+    const { size, check, label, labelPosition, state, onPress } = props;
     
     let stateColor = (state === 'Active')? ColorsSkin.PrimaryColor:ColorsSkin.DisableBackground;
-    let backgroundColor = (check === 'Yes')? stateColor:null;
-    if (state === 'Disable' && check === 'No') {backgroundColor = ColorsStyle.gray_3};
+    let backgroundColor = (check === true)? stateColor:null;
+    if (state === 'Disable' && check === false) {backgroundColor = ColorsStyle.gray_3};
 
     let labelContent = '';
     if(state === 'Active' ){
-        if(check === 'Yes') labelContent = 'Checked'
+        if(check === true) labelContent = 'Checked'
         else labelContent = 'Unchecked'
     } else{
-        if(check === 'No') labelContent = 'Disable-Unchecked'
+        if(check === false) labelContent = 'Disable-Unchecked'
         else labelContent = 'Disable-Checked'
     }
 
@@ -42,7 +41,7 @@ const RadioButton = (props) => {
     const radioStyle = {
         width: size - 4,
         height: size - 4,
-        backgroundColor:(state === 'Disable' && check === 'No')? ColorsSkin.Gray_4Background:null,
+        backgroundColor:(state === 'Disable' && check === false)? ColorsSkin.Gray_4Background:null,
         borderRadius: 100,
         borderWidth: 2,
         borderColor: stateColor,
@@ -64,9 +63,9 @@ const RadioButton = (props) => {
   return (
     <View style={[containerStyle]}>
       {(label === 'Yes' && labelPosition === 'Left') && <Text style={{labelStyle}}>{labelContent}</Text>}
-      <Pressable style={[sizeStyleRadioContainer]}>
+      <Pressable onPress={onPress} style={[sizeStyleRadioContainer]}>
         <View style={[radioStyle]}>
-            { check === 'Yes' && <View style={[innerRadioStyle]}/>}
+            { check === true && <View style={[innerRadioStyle]}/>}
         </View>
       </Pressable>
       {(label === 'Yes' && labelPosition === 'Right') && <Text style={{labelStyle}}>{labelContent}</Text>}

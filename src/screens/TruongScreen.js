@@ -30,10 +30,12 @@ import MediaView from "../Components/MediaView";
 import ContentText from "../Components/ContentText";
 import ListTitle from "../Components/ListTitle";
 import ColorsStyle from "../../Styles/ColorsStyle";
+import ExpansionItem from "../Components/ExpansionPanel/ExpansionItem";
 
 export default function TruongScreen() {
   const [isSwitch, setIsSwitch] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [isCheckedRadio, setIsCheckedRadio] = useState(false);
 
   const actionStateData = [
     {
@@ -60,66 +62,67 @@ export default function TruongScreen() {
         backgroundColor: ColorsStyle.lime_3,
       }}
     >
-      <CustomButton
+      {/* <CustomButton
         style="Solid"
         size={48}
         state="Error"
         position="IconLeft"
         content="Button"
         iconUri="https://mobiledevtutorials.com/content/images/size/w1000/2022/12/Green-and-White-Illustration-Science-Class-Education-Presentation--33-.png?ezimgfmt=ng:webp/ngcb1"
-      ></CustomButton>
+      ></CustomButton> */}
 
-      <CheckBox
+      {/* <CheckBox
         size={24}
         check={isChecked}
         state="Active"
         label="Yes"
         labelPosition="Right"
         onPress={() => {setIsChecked(!isChecked)}}
-      ></CheckBox>
+      ></CheckBox> */}
 
-      <ProgressBar status="Default" percentage="90%"></ProgressBar>
+      {/* <ProgressBar status="Default" percentage="90%"></ProgressBar> */}
 
-      <RadioButton
+      {/* <RadioButton
         size={24}
-        check="No"
+        check={isCheckedRadio}
         state="Active"
         label="Yes"
         labelPosition="Right"
-      ></RadioButton>
+        onPress={() => {setIsCheckedRadio(!isCheckedRadio)}}
+      ></RadioButton> */}
 
-      <Switch
+      {/* <Switch
         label="No"
         labelPosition="Right"
         Switch={isSwitch}
         state="Active"
         onPress={() => setIsSwitch(!isSwitch)}
-      ></Switch>
+      ></Switch> */}
 
-      <ToolTip
+      {/* <ToolTip
         arrowPosition="Bottom"
         align="Center"
         message="Message Message Message "
-      ></ToolTip>
+      ></ToolTip> */}
 
-      <Tag size={48} position="IconRight" content="Tag"></Tag>
+      {/* <Tag size={48} position="IconRight" content="Tag"></Tag> */}
 
-      <ScrollBar style="Horizontal"></ScrollBar>
+      {/* <ScrollBar style="Horizontal"></ScrollBar> */}
 
-      <DateElement state="Present" eventBadge="Yes" content="7"></DateElement>
+      {/* <DateElement state="Present" eventBadge="Yes" content="7"></DateElement> */}
 
-      <NumberPicker style="Ghost" size={24}></NumberPicker>
+      {/* <NumberPicker style="Ghost" size={24}></NumberPicker> */}
 
-      <PaginationItems status="Active" content={1}></PaginationItems>
+      {/* <PaginationItems status="Active" content={1}></PaginationItems> */}
 
-      <Card
+      {/* <Card
         mediaPosition="MediaAbove"
         contentAlign="Right"
         actionView="Yes"
         mediaView="Yes"
         mediaBG="Yes"
         mediaBGUri="https://th.bing.com/th?id=ORMS.a66c2ad904c01fdb845a2704758a26df&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0"
-      ></Card>
+      ></Card> */}
 
       {/* <MenuItems
         data={[
@@ -186,31 +189,27 @@ export default function TruongScreen() {
       ></Pagination> */}
       {/* <Popup></Popup> */}
 
-      <ActionState state="PositiveState" content="Action"></ActionState>
+      {/* <ActionState state="PositiveState" content="Action"></ActionState> */}
 
-      <ActionSheet
+      {/* <ActionSheet
         WithSubtitle="Yes"
         actionStateData={actionStateData}
-      ></ActionSheet>
+      ></ActionSheet> */}
 
-      <MediaView style="oundingBoxCircle" size={183}></MediaView>
+      {/* <MediaView style="oundingBoxCircle" size={183}></MediaView> */}
 
-      <ContentText
+      {/* <ContentText
         contentAlign="Center"
         subTitle="Yes"
         body="Yes"
         titleContent="Title"
         subTitleContent="Sub title"
         bodyContent="Body content"
-      ></ContentText>
+      ></ContentText> */}
 
-      <ListTitle contentViewAlign="Left" withMedia="Yes"></ListTitle>
-      <Image
-        style={styles.image}
-        source={{
-          uri: "https://icons.veryicon.com/png/o/miscellaneous/mlxc-public-icon-library/right-direction-1.png",
-        }}
-      ></Image>
+      {/* <ListTitle contentViewAlign="Left" withMedia="Yes"></ListTitle> */}
+
+      <ExpansionItem></ExpansionItem>
     </ScrollView>
   );
 }

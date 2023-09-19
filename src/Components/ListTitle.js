@@ -3,10 +3,11 @@ import React from 'react'
 import MediaView from './MediaView'
 import ContentText from './ContentText'
 import CustomButton from './Button'
+import ColorsSkin from '../../Styles/ColorsSkin'
 
 const ListTitle = (props) => {
 
-    const {style, contentViewAlign, withMedia} = props;
+    const {style, contentViewAlign, withMedia, mediaUri} = props;
     let contentViewAlignStyle;
     const flexContent = (contentViewAlign === 'Center')? {flex: 0}:{flex: 1};
 
@@ -62,7 +63,7 @@ const ListTitle = (props) => {
             state='Primary'
             position='IconRight'
             content='Button'
-            iconUri='https://icons.veryicon.com/png/o/miscellaneous/mlxc-public-icon-library/right-direction-1.png'
+            iconUri={mediaUri}
         ></CustomButton>}
       </View>
 
@@ -81,7 +82,7 @@ export default ListTitle
 
 const styles = StyleSheet.create({
     container: {
-        //backgroundColor: ColorsSkin.Gray_1Background,
+        backgroundColor: ColorsSkin.Gray_1Background,
         height: 'auto',
         width: '100%',
         alignItems: 'center',
