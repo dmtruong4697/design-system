@@ -1,10 +1,10 @@
 import React, { createContext } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { Button, Text, TextInput, View } from "react-native";
-import CustomInputField from "../../CustomInputField";
 import PropTypes, { any, oneOfType } from "prop-types";
 import { InputType } from "../../../constants/constants";
-import CustomCheckBox from "../../CustomCheckBox";
+import CustomInputField from "../CustomInputField";
+import CustomCheckBox from "../CustomCheckBox";
 
 FormContainer.propTypes = {
   onSubmitting: PropTypes.func,

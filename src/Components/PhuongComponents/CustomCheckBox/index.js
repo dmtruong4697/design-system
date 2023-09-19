@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 import { Animated, Text, View } from "react-native";
 import PropTypes, { any } from "prop-types";
 import { Controller } from "react-hook-form";
-import { AppColors } from "../../constants/AppStyle";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+import { AppColors } from "../../../constants/AppStyle";
 
 CustomCheckBox.propTypes = {
   control: PropTypes.any,

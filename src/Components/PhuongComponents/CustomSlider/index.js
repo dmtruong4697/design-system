@@ -2,7 +2,7 @@ import {Slider} from '@miblanchard/react-native-slider';
 import React, {useState} from 'react';
 import {Dimensions, Text, TouchableHighlight, View} from 'react-native';
 import PropTypes from 'prop-types';
-import {AppColors} from '../../constants/AppStyle';
+import { AppColors } from '../../../constants/AppStyle';
 
 CustomSlider.propTypes = {
   disabled: PropTypes.bool,

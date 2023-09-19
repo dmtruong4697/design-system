@@ -22,7 +22,7 @@ const HomeScreen = () => {
     <SafeAreaProvider>
       <View style={{ flex: 1, paddingTop: 20 }}>
         {CustomButton("Trưởng Screen", ScreenNames.TruongScreen)}
-        {/* {CustomButton("Phương Screen", ScreenNames.PhuongScreen)} */}
+        {CustomButton("Phương Screen", ScreenNames.PhuongScreen)}
         {CustomButton("Long Screen", ScreenNames.LongScreen)}
       </View>
     </SafeAreaProvider>
