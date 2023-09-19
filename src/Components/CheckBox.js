@@ -6,7 +6,7 @@ import ColorsStyle from '../../Styles/ColorsStyle';
 
 const CheckBox = (props) => {
 
-    const { size, check, label, labelPosition, state } = props;
+    const { size, check, label, labelPosition, state, onPress } = props;
     let stateColor = (state === 'Active')? ColorsSkin.PrimaryColor:ColorsSkin.DisableBackground;
     let backgroundColor = (check === true)? stateColor:null;
     if (state === 'Disable' && check === false) {backgroundColor = ColorsStyle.gray_3};
@@ -42,7 +42,7 @@ const CheckBox = (props) => {
         height: size - 4,
         backgroundColor: backgroundColor,
         borderRadius: 4,
-        borderWidth: (check === 'No')? 1:0,
+        borderWidth: (check === false)? 1:0,
         borderColor: ColorsStyle.gray_4,
         alignItems: 'center',
         justifyContent: 'center'
@@ -52,9 +52,9 @@ const CheckBox = (props) => {
   return (
     <View style={[containerStyle]}>
       {(label === 'Yes' && labelPosition === 'Left') && <Text style={{labelStyle}}>{labelContent}</Text>}
-      <Pressable style={[sizeStyleCheckboxContainer]}>
+      <Pressable onPress={onPress} style={[sizeStyleCheckboxContainer]}>
         <View style={[sizeStyle]}>
-            { check === 'Yes' && <Icons size={10} uri='https://cdn-icons-png.flaticon.com/512/18/18442.png'></Icons>}
+            { check === true && <Icons size={10} uri='https://cdn-icons-png.flaticon.com/512/18/18442.png'></Icons>}
         </View>
       </Pressable>
       {(label === 'Yes' && labelPosition === 'Right') && <Text style={{labelStyle}}>{labelContent}</Text>}

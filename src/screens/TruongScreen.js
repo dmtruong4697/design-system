@@ -29,9 +29,12 @@ import ActionSheet from "../Components/ActionSheet/ActionSheet";
 import MediaView from "../Components/MediaView";
 import ContentText from "../Components/ContentText";
 import ListTitle from "../Components/ListTitle";
+import ColorsStyle from "../../Styles/ColorsStyle";
 
 export default function TruongScreen() {
   const [isSwitch, setIsSwitch] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
+
   const actionStateData = [
     {
       state: "PositiveState",
@@ -48,7 +51,7 @@ export default function TruongScreen() {
   ];
   return (
     <ScrollView
-      horizontal={true}
+      //horizontal={true}
       contentContainerStyle={{
         flexGrow: 1,
         justifyContent: "center",
@@ -68,10 +71,11 @@ export default function TruongScreen() {
 
       <CheckBox
         size={24}
-        check="Yes"
+        check={isChecked}
         state="Active"
         label="Yes"
         labelPosition="Right"
+        onPress={() => {setIsChecked(!isChecked)}}
       ></CheckBox>
 
       <ProgressBar status="Default" percentage="90%"></ProgressBar>
@@ -117,7 +121,7 @@ export default function TruongScreen() {
         mediaBGUri="https://th.bing.com/th?id=ORMS.a66c2ad904c01fdb845a2704758a26df&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0"
       ></Card>
 
-      <MenuItems
+      {/* <MenuItems
         data={[
           {
             title: "Phuong",
@@ -150,9 +154,9 @@ export default function TruongScreen() {
             },
           },
         ]}
-      />
+      /> */}
 
-      <Pagination
+      {/* <Pagination
         Pags={[
           {
             id: 1,
@@ -179,8 +183,8 @@ export default function TruongScreen() {
             },
           },
         ]}
-      ></Pagination>
-      <Popup></Popup>
+      ></Pagination> */}
+      {/* <Popup></Popup> */}
 
       <ActionState state="PositiveState" content="Action"></ActionState>
 
