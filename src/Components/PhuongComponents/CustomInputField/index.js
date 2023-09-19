@@ -9,10 +9,10 @@ import {
   View,
 } from "react-native";
 import PropTypes, { any, oneOfType } from "prop-types";
-import { AppColors, AppTextStyle } from "../../constants/AppStyle";
 import { Controller, useForm } from "react-hook-form";
-import { KeyboardTypes } from "../../constants/constants";
-import { AppIcons } from "../../constants/AppResource";
+import { AppIcons } from "../../../constants/AppResource";
+import { AppColors, AppTextStyle } from "../../../constants/AppStyle";
+import { KeyboardTypes } from "../../../constants/constants";
 
 CustomInputField.propTypes = {
   name: PropTypes.string,
