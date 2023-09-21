@@ -1,14 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import ListTitle from '../ListTitle'
 
 const ExpansionItem = () => {
   return (
     <View style={styles.container}>
-      <ListTitle
-        contentViewAlign='Left'
-        withMedia='Yes'
-      ></ListTitle>
+      <Pressable>
+        <ListTitle
+          contentViewAlign='Left'
+          withMedia='Yes'
+        ></ListTitle>
+      </Pressable>
     </View>
   )
 }

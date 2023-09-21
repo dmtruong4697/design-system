@@ -2,7 +2,8 @@ import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import React from "react";
 import ColorsSkin from "../../Styles/ColorsSkin";
 import ColorsStyle from "../../Styles/ColorsStyle";
-import CustomButton from "./Button";
+import CustomButton from "./CustomButton";
+import MediaView from "./MediaView";
 
 const Card = (props) => {
   const {
@@ -12,6 +13,12 @@ const Card = (props) => {
     contentAlign,
     mediaBG,
     mediaBGUri,
+    title,
+    subTitle,
+    bodyContent,
+    mediaStyle,
+    mediaSize,
+    mediaUri,
   } = props;
   let contentMediaPositionStyle, contentAlignStyle;
   const uri = mediaBG === "Yes" ? mediaBGUri : "";
@@ -86,14 +93,19 @@ const Card = (props) => {
       <View
         style={[styles.content, contentMediaPositionStyle, contentAlignStyle]}
       >
-        {mediaView === "Yes" && <View style={[styles.mediaView]}></View>}
+        {mediaView === "Yes" && <MediaView
+          style= {mediaStyle}
+          size= {mediaSize}
+          mediaUri= {mediaUri}
+        ></MediaView>} 
+
         <View style={[styles.contentText, contentAlignStyle]}>
           <View style={[styles.titleAndSub, contentAlignStyle]}>
-            <Text style={styles.titleStyle}>TITLE</Text>
-            <Text style={styles.subTitleStyle}>Sub</Text>
+            <Text style={styles.titleStyle}>{title}</Text>
+            <Text style={styles.subTitleStyle}>{subTitle}</Text>
           </View>
           <View style={[styles.bodyContent, styles.bodyContentStyle]}>
-            <Text>Body content</Text>
+            <Text>{bodyContent}</Text>
           </View>
         </View>
       </View>

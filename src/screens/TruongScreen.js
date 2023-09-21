@@ -9,7 +9,7 @@ import {
   ImageBackground,
   ScrollView,
 } from "react-native";
-import CustomButton from "../Components/Button";
+import CustomButton from "../Components/CustomButton";
 import CheckBox from "../Components/CheckBox";
 import ProgressBar from "../Components/ProgressBar";
 import RadioButton from "../Components/RadioButton";
@@ -31,6 +31,10 @@ import ContentText from "../Components/ContentText";
 import ListTitle from "../Components/ListTitle";
 import ColorsStyle from "../../Styles/ColorsStyle";
 import ExpansionItem from "../Components/ExpansionPanel/ExpansionItem";
+import TestButton from "../Components/TestButton";
+import { AppIcons } from "../constants/AppResource";
+import ColorsSkin from "../../Styles/ColorsSkin";
+import ScrollViewIndicator from 'react-native-scroll-indicator';
 
 export default function TruongScreen() {
   const [isSwitch, setIsSwitch] = useState(false);
@@ -62,14 +66,20 @@ export default function TruongScreen() {
         backgroundColor: ColorsStyle.lime_3,
       }}
     >
+      {/* <View style={{marginVertical:50}}>
+           <TestButton
+          style={{aspectRatio:1, backgroundColor:'transparent', borderWidth:1, borderColor:ColorsSkin.Gray_3Background}}
+           prefixIcon={AppIcons.success}
+           />
+           </View> */}
       {/* <CustomButton
         style="Solid"
         size={48}
-        state="Error"
+        state="Primary"
         position="IconLeft"
         content="Button"
         iconUri="https://mobiledevtutorials.com/content/images/size/w1000/2022/12/Green-and-White-Illustration-Science-Class-Education-Presentation--33-.png?ezimgfmt=ng:webp/ngcb1"
-      ></CustomButton> */}
+      /> */}
 
       {/* <CheckBox
         size={24}
@@ -101,13 +111,21 @@ export default function TruongScreen() {
 
       {/* <ToolTip
         arrowPosition="Bottom"
-        align="Center"
-        message="Message Message Message "
+        align="Left"
+        message="Message"
       ></ToolTip> */}
 
-      {/* <Tag size={48} position="IconRight" content="Tag"></Tag> */}
+      {/* <Tag 
+        size={48} 
+        position="IconRight" 
+        content="Tag"
+        iconUri='https://avatars.githubusercontent.com/u/6078720?s=200&v=4'
+        iconSize={20}/> */}
 
-      {/* <ScrollBar style="Horizontal"></ScrollBar> */}
+      {/* <ScrollBar 
+        style="Horizontal"
+        size={100}
+      /> */}
 
       {/* <DateElement state="Present" eventBadge="Yes" content="7"></DateElement> */}
 
@@ -120,96 +138,50 @@ export default function TruongScreen() {
         contentAlign="Right"
         actionView="Yes"
         mediaView="Yes"
-        mediaBG="Yes"
+        mediaBG="No"
         mediaBGUri="https://th.bing.com/th?id=ORMS.a66c2ad904c01fdb845a2704758a26df&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0"
+        title="Title"
+        subTitle="Sub Title"
+        bodyContent="Body Content"
       ></Card> */}
 
-      {/* <MenuItems
-        data={[
-          {
-            title: "Phuong",
-            action: () => {
-              console.log("asdas");
-            },
-          },
-          {
-            title: "Phuong",
-            action: () => {
-              console.log("asdas");
-            },
-          },
-          {
-            title: "Phuong",
-            action: () => {
-              console.log("asdas");
-            },
-          },
-          {
-            title: "Phuong",
-            action: () => {
-              console.log("asdas");
-            },
-          },
-          {
-            title: "Phuong",
-            action: () => {
-              console.log("asdasdsfvds");
-            },
-          },
-        ]}
-      /> */}
-
-      {/* <Pagination
-        Pags={[
-          {
-            id: 1,
-            action: () => {
-              console.log("asdas");
-            },
-          },
-          {
-            id: 2,
-            action: () => {
-              console.log("asdas");
-            },
-          },
-          {
-            id: 3,
-            action: () => {
-              console.log("asdas");
-            },
-          },
-          {
-            id: 4,
-            action: () => {
-              console.log("asdas");
-            },
-          },
-        ]}
-      ></Pagination> */}
       {/* <Popup></Popup> */}
 
       {/* <ActionState state="PositiveState" content="Action"></ActionState> */}
 
       {/* <ActionSheet
         WithSubtitle="Yes"
+        titleContent='Title'
         actionStateData={actionStateData}
       ></ActionSheet> */}
 
-      {/* <MediaView style="oundingBoxCircle" size={183}></MediaView> */}
+      {/* <MediaView 
+        style="BoundingBoxCircle" 
+        size={180}
+        mediaUri="https://th.bing.com/th?id=ORMS.f08f5dd6566a4b9f4387257e558ac94a&pid=Wdp&w=300&h=156&qlt=90&c=1&rs=1&dpr=1.25&p=0"
+      ></MediaView> */}
 
       {/* <ContentText
-        contentAlign="Center"
+        contentAlign="Left"
         subTitle="Yes"
         body="Yes"
         titleContent="Title"
-        subTitleContent="Sub title"
-        bodyContent="Body content"
-      ></ContentText> */}
+        subTitleContent="Sub title Sub titleSub titleSub titleSub titleSub titleSub titleSub titleSub titleSub titleSub titleSub title"
+        bodyContent="Body content Body contentBody contentBody contentBody contentBody contentBody contentBody contentBody content"
+      ></ContentText>  */}
 
-      {/* <ListTitle contentViewAlign="Left" withMedia="Yes"></ListTitle> */}
+      <ListTitle  
+        contentViewAlign="Center" 
+        withMedia="Yes"
+      ></ListTitle>
 
-      <ExpansionItem></ExpansionItem>
+      {/* <ExpansionItem></ExpansionItem> */}
+
+      {/* <NumberPicker
+        size={24}
+        style='Solid'
+      /> */}
+      
     </ScrollView>
   );
 }

@@ -2,8 +2,19 @@ import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import ColorsSkin from '../../../Styles/ColorsSkin';
 import TypoSkin from '../../../Styles/TypoSkin';
+import PropTypes from "prop-types";
 
-const ActionState = (props) => {
+ActionState.PropTypes = {
+    state: PropTypes.string,
+    content: PropTypes.string,
+}
+
+ActionState.defaultProps = {
+    state: 'PositiveState',
+    content: 'Action',
+}
+
+function ActionState(props) {
 
     const {state, content} = props;
 
@@ -24,7 +35,8 @@ export default ActionState
 const styles = StyleSheet.create({
     container: {
         width: '100%',
-        height: 46,
+        height: 'auto',
+        padding: 10,
         backgroundColor: ColorsSkin.Gray_1Background,
         borderRadius: 8,
         justifyContent: 'center',

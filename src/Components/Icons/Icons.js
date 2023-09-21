@@ -1,17 +1,18 @@
 import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native'
 import React from 'react'
+import PropTypes from "prop-types";
 
-const Icons = (props) => {
+function Icons(props) {
 
     const { size, uri} = props;
 
-    // const sizeStyle = {
-    //     width: size,
-    //     height: size,
-    // }
+    const sizeStyle = {
+        width: size,
+        height: size,
+    }
   return (
     <View style={styles.container}>
-        <Image style={styles.image} source={{uri: uri}}></Image>
+        <Image style={[styles.image, sizeStyle]} source={{uri: uri}}></Image>
     </View>
   )
 }
@@ -20,8 +21,8 @@ export default Icons
 
 const styles = StyleSheet.create({
     image: {
-        width: 20,
-        height:20,
+        // width: 20,
+        // height:20,
         //alignContent: 'center',
         //alignItems: 'center',
         //backgroundColor: ColorsSkin.Gray_4Background,

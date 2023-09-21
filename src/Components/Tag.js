@@ -2,10 +2,27 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import ColorsSkin from '../../Styles/ColorsSkin';
 import Icons from './Icons/Icons';
+import PropTypes from "prop-types";
 
-const Tag = (props) => {
+Tag.PropTypes = {
+    size: PropTypes.number,
+    position: PropTypes.string,
+    content: PropTypes.string,
+    iconUri: PropTypes.string,
+    iconSize: PropTypes.number
+}
+
+Tag.defaultProps = {
+    size: 48,
+    position: 'IconRight',
+    content: 'Tag',
+    iconUri: '',
+    iconSize: 20,
+}
+
+function Tag(props) {
     
-    const { size, position, content } = props;
+    const { size, position, content, iconUri, iconSize } = props;
 
     let styleStyle = {};
     let sizeStyle = {};
@@ -66,9 +83,9 @@ const Tag = (props) => {
   return (
     <View>
     <Pressable style={[styles.container, sizeStyle]}>
-        { (position === 'IconLeft' || position === 'IconOnly') && <Icons size={20} uri='https://cdn-icons-png.flaticon.com/512/126/126422.png'></Icons>}
+        { (position === 'IconLeft' || position === 'IconOnly') && <Icons size={20} uri={iconUri}></Icons>}
         { position !== 'IconOnly' && <Text style={[textColorStyle]}>{content}</Text>}
-        { position === 'IconRight' && <Icons size={20} uri='https://cdn-icons-png.flaticon.com/512/126/126422.png'></Icons>}
+        { position === 'IconRight' && <Icons size={iconSize} uri={iconUri}></Icons>}
     </Pressable>
     </View>
   )
@@ -84,5 +101,6 @@ const styles = StyleSheet.create({
         alignContent: 'center',
         justifyContent: 'space-around',
         backgroundColor: ColorsSkin.PrimaryTagBackgroundColor,
+        
     }
 })

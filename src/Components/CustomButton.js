@@ -132,9 +132,12 @@ export default CustomButton;
 const styles = StyleSheet.create({
   container: {
     height: "auto",
+    width: "auto",
+    maxWidth: '100%',
     flexDirection: "row",
     alignItems: "center",
     alignContent: "center",
     justifyContent: "space-around",
+    
   },
 });

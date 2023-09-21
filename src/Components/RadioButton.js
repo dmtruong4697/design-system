@@ -3,8 +3,27 @@ import React from 'react'
 import { useState } from 'react';
 import ColorsSkin from '../../Styles/ColorsSkin';
 import ColorsStyle from '../../Styles/ColorsStyle';
+import PropTypes from "prop-types";
 
-const RadioButton = (props) => {
+RadioButton.PropTypes = {
+    size: PropTypes.number,
+    check: PropTypes.bool,
+    state: PropTypes.string,
+    label: PropTypes.string,
+    labelPosition: PropTypes.string,
+    onPress: PropTypes.func,
+}
+
+RadioButton.defaultProps = {
+    size: 24,
+    check: false,
+    state: "Active",
+    label: "Yes",
+    labelPosition: "Right",
+    onPress: {},
+}
+
+function RadioButton(props) {
 
     const { size, check, label, labelPosition, state, onPress } = props;
     
@@ -23,8 +42,9 @@ const RadioButton = (props) => {
 
     const containerStyle = {
         height: size,
-        width: 'auto',
+        width: 120,
         flexDirection: 'row',
+        justifyContent: 'flex-start',
     }
 
     const labelStyle = {

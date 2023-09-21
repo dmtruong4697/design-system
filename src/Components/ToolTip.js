@@ -1,9 +1,23 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import CustomButton from './Button';
+import CustomButton from './CustomButton';
 import ToolTipArrow from './ToolTipArrow';
+import PropTypes from "prop-types";
+import ColorsSkin from '../../Styles/ColorsSkin';
 
-const ToolTip = (props) => {
+ToolTip.PropTypes = {
+  arrowPosition: PropTypes.string,
+  align: PropTypes.string,
+  message: PropTypes.string,
+}
+
+ToolTip.defaultProps = {
+  arrowPosition: "Bottom",
+  align: "Left",
+  message: "Message",
+}
+
+function ToolTip (props) {
 
     const {arrowPosition, align, message} = props;
     let top, left, rotate;
@@ -109,13 +123,16 @@ const ToolTip = (props) => {
           rotate={rotate}
         ></ToolTipArrow>
       </View>
-      <CustomButton
+      {/* <CustomButton
         style='Solid'
         size={32}
         state='Primary'
         position='TextOnly'
         content={message}
-      ></CustomButton>
+      ></CustomButton> */}
+      <View style={styles.messageBox}>
+        <Text style={{color: ColorsSkin.OnColorBackground}}>{message}</Text>
+      </View>
     </View>
   )
 }
@@ -126,6 +143,13 @@ const styles = StyleSheet.create({
     container: {
         height: 'auto',
         width: 'auto',
+        maxWidth: '100%',
+        maxHeight: '100%'
         //flexDirection: 'column'
     },
+    messageBox: {
+      borderRadius: 8,
+      backgroundColor: ColorsSkin.PrimaryColor,
+      padding: 5,
+    }
 })

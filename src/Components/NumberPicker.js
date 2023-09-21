@@ -2,8 +2,19 @@ import { StyleSheet, Text, View, Pressable } from 'react-native'
 import React from 'react'
 import { useState } from 'react'
 import ColorsSkin from '../../Styles/ColorsSkin';
+import PropTypes from "prop-types";
 
-const NumberPicker = (props) => {
+NumberPicker.PropTypes = {
+    size: PropTypes.number,
+    style: PropTypes.string,
+}
+
+NumberPicker.defaultProps = {
+    size: 24,
+    style: 'Ghost'
+}
+
+function NumberPicker(props) {
 
     const [number, setNumber] = useState(0);
     const {size, style} = props;

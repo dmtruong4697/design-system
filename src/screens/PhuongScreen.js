@@ -4,6 +4,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import {
@@ -23,6 +24,7 @@ import TableTitle from "../Components/PhuongComponents/TableItem/TableTitle";
 import ChartBar from "../Components/PhuongComponents/ChartBar";
 import ChartPie from "../Components/PhuongComponents/ChartPie";
 import { AppColors } from "../constants/AppStyle";
+import TestButton from "../Components/TestButton";
 
 const labels = [
   "Cart",
@@ -44,6 +46,7 @@ const PhuongScreen = () => {
           <View style={{ height: insets.top, backgroundColor: "grey" }}></View>
           <View style={{ flex: 1, padding: 20 }}>
             <FormContainer
+
               fields={[
                 {
                   name: "name",
@@ -109,6 +112,7 @@ const PhuongScreen = () => {
             />
             <Text>Checkpoint</Text>
             <CustomStepIndicator
+
               labels={labels}
               currentPosition={currentPosition}
               isLoading={isLoading}

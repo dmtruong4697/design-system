@@ -2,12 +2,12 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import MediaView from './MediaView'
 import ContentText from './ContentText'
-import CustomButton from './Button'
+import CustomButton from './CustomButton'
 import ColorsSkin from '../../Styles/ColorsSkin'
 
 const ListTitle = (props) => {
 
-    const {style, contentViewAlign, withMedia, mediaUri} = props;
+    const {style, contentViewAlign, withMedia, mediaUri, titleContent, subTitleContent, bodyContent} = props;
     let contentViewAlignStyle;
     const flexContent = (contentViewAlign === 'Center')? {flex: 0}:{flex: 1};
 
@@ -52,9 +52,9 @@ const ListTitle = (props) => {
             contentAlign={contentViewAlign}
             subTitle='No'
             body='No'
-            titleContent='Title'
-            subTitleContent='Sub title'
-            bodyContent='Body content'
+            titleContent={titleContent}
+            subTitleContent={subTitleContent}
+            bodyContent={bodyContent}
         ></ContentText>
 
         {!(contentViewAlign === 'Center') && <CustomButton
@@ -86,6 +86,7 @@ const styles = StyleSheet.create({
         height: 'auto',
         width: '100%',
         alignItems: 'center',
+        borderRadius: 8,
         //backgroundColor: 'pink'
     },
     content: {

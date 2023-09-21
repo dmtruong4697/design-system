@@ -2,12 +2,12 @@ import { StyleSheet, Text, View, Pressable, FlatList, } from 'react-native'
 import React from 'react'
 import ActionState from './ActionState'
 import ListTitle from '../ListTitle'
-import CustomButton from '../Button'
+import CustomButton from '../CustomButton'
 import ColorsSkin from '../../../Styles/ColorsSkin'
 
 const ActionSheet = (props) => {
 
-    const {WithSubtitle, ItemNumber, actionStateData} = props;
+    const {WithSubtitle, ItemNumber, actionStateData, titleContent} = props;
 
   return (
     <View style={styles.container}>
@@ -15,6 +15,7 @@ const ActionSheet = (props) => {
           {(WithSubtitle === 'Yes') && <ListTitle
             contentViewAlign='Center'
             withMedia='No'
+            titleContent={titleContent}
           ></ListTitle>}
 
         <FlatList style={styles.flatList}
