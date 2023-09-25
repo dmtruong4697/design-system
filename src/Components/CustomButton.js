@@ -1,11 +1,11 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import ColorsStyle from "../../Styles/ColorsStyle";
 import ColorsSkin from "../../Styles/ColorsSkin";
 import Icons from "./Icons/Icons";
 
 const CustomButton = (props) => {
-  const { style, size, position, state, content, iconUri } = props;
+  const { style, size, position, state, content, iconUri, buttonWidth, onPress } = props;
 
   let styleStyle = {};
   let sizeStyle = {};
@@ -62,7 +62,7 @@ const CustomButton = (props) => {
   switch (size) {
     case 48:
       sizeStyle = {
-        width: "auto",
+        width: '100%',
         height: 48,
         paddingTop: 12,
         paddingRight: 24,
@@ -73,7 +73,7 @@ const CustomButton = (props) => {
       break;
     case 40:
       sizeStyle = {
-        width: "auto",
+        width: '100%',
         height: 40,
         paddingTop: 9,
         paddingRight: 16,
@@ -84,7 +84,7 @@ const CustomButton = (props) => {
       break;
     case 32:
       sizeStyle = {
-        width: "auto",
+        width: '100%',
         height: 32,
         paddingTop: 5,
         paddingRight: 12,
@@ -95,7 +95,7 @@ const CustomButton = (props) => {
       break;
     case 24:
       sizeStyle = {
-        width: "auto",
+        width: '100%',
         height: 24,
         paddingTop: 1,
         paddingRight: 8,
@@ -113,8 +113,8 @@ const CustomButton = (props) => {
   };
 
   return (
-    <View>
-      <Pressable style={[styles.container, sizeStyle, styleStyle]}>
+    <View style={{width: buttonWidth, alignItems: 'center'}}>
+      <TouchableOpacity style={[styles.container, sizeStyle, styleStyle,]} onPress={onPress}>
         {(position === "IconLeft" || position === "IconOnly") && (
           <Icons size={20} uri={iconUri}></Icons>
         )}
@@ -122,7 +122,7 @@ const CustomButton = (props) => {
           <Text style={[textColorStyle]}>{content}</Text>
         )}
         {position === "IconRight" && <Icons size={20} uri={iconUri}></Icons>}
-      </Pressable>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -132,7 +132,7 @@ export default CustomButton;
 const styles = StyleSheet.create({
   container: {
     height: "auto",
-    width: "auto",
+   //width: "auto",
     maxWidth: '100%',
     flexDirection: "row",
     alignItems: "center",

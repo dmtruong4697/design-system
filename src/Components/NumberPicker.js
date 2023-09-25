@@ -4,7 +4,7 @@ import { useState } from 'react'
 import ColorsSkin from '../../Styles/ColorsSkin';
 import PropTypes from "prop-types";
 
-NumberPicker.PropTypes = {
+NumberPicker.propTypes = {
     size: PropTypes.number,
     style: PropTypes.string,
 }

@@ -5,7 +5,7 @@ import ToolTipArrow from './ToolTipArrow';
 import PropTypes from "prop-types";
 import ColorsSkin from '../../Styles/ColorsSkin';
 
-ToolTip.PropTypes = {
+ToolTip.propTypes = {
   arrowPosition: PropTypes.string,
   align: PropTypes.string,
   message: PropTypes.string,

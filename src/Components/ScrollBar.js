@@ -3,7 +3,7 @@ import React from 'react'
 import ColorsSkin from '../../Styles/ColorsSkin';
 import PropTypes from "prop-types";
 
-ScrollBar.PropTypes = {
+ScrollBar.propTypes = {
   style: PropTypes.string,
   size: PropTypes.number,
 }

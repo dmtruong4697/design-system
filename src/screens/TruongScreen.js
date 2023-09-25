@@ -35,6 +35,7 @@ import TestButton from "../Components/TestButton";
 import { AppIcons } from "../constants/AppResource";
 import ColorsSkin from "../../Styles/ColorsSkin";
 import ScrollViewIndicator from 'react-native-scroll-indicator';
+import EmptyScreenView from "../Components/EmptyScreenView";
 
 export default function TruongScreen() {
   const [isSwitch, setIsSwitch] = useState(false);
@@ -62,7 +63,7 @@ export default function TruongScreen() {
         flexGrow: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginTop: 50,
+        //marginTop: 50,
         backgroundColor: ColorsStyle.lime_3,
       }}
     >
@@ -173,6 +174,10 @@ export default function TruongScreen() {
       <ListTitle  
         contentViewAlign="Center" 
         withMedia="Yes"
+        buttonIconUri={'https://icons.veryicon.com/png/o/miscellaneous/mlxc-public-icon-library/right-direction-1.png'}
+        //leftMedia={'a'}
+        //rightMedia={'a'}
+        contentAlign={'right'}
       ></ListTitle>
 
       {/* <ExpansionItem></ExpansionItem> */}
@@ -181,7 +186,19 @@ export default function TruongScreen() {
         size={24}
         style='Solid'
       /> */}
-      
+
+      {/* <EmptyScreenView
+        imageUri={'https://cdni.iconscout.com/illustration/premium/thumb/loading-webpage-4064361-3363922.png'}
+        titleContent={'No orders are pending approval'}
+        subTitleContent={'Customer’s orders will appear up here. Be ready to approve new orders.'}
+        bodyContent={''}
+        contentAlign={'center'}
+        buttonContent={'Click here'}
+        buttonState={'Error'}
+        onPress={() => {
+          console.log('truong dpeiza')
+        }}
+      /> */}
     </ScrollView>
   );
 }

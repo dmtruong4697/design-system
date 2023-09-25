@@ -4,7 +4,7 @@ import ColorsSkin from '../../Styles/ColorsSkin';
 import Icons from './Icons/Icons';
 import PropTypes from "prop-types";
 
-Tag.PropTypes = {
+Tag.propTypes = {
     size: PropTypes.number,
     position: PropTypes.string,
     content: PropTypes.string,

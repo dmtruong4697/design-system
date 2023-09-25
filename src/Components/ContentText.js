@@ -1,28 +1,43 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import TypoSkin from '../../Styles/TypoSkin';
+import PropTypes from "prop-types";
 
-const ContentText = (props) => {
+ContentText.propTypes = {
+    contentAlign: PropTypes.string,
+    titleContent: PropTypes.string,
+    subTitleContent: PropTypes.string,
+    bodyContent: PropTypes.string,
+}
 
-    const {subTitle, body, contentAlign, titleContent, subTitleContent, bodyContent} = props;
+ContentText.defaultProps = {
+    contentAlign: 'center',
+    titleContent: 'Title',
+    subTitleContent: '',
+    bodyContent: '',
+}
+
+function ContentText(props) {
+
+    const {contentAlign, titleContent, subTitleContent, bodyContent} = props;
     let alignStyle = {};
 
     switch (contentAlign) {
-        case 'Left': {
+        case 'left': {
             alignStyle = {
                 alignItems: 'flex-start',
                 flexDirection: 'column',
             }
         }
         break;
-        case 'Right': {
+        case 'right': {
             alignStyle = {
                 alignItems: 'flex-end',
                 flexDirection: 'column',
             }
         }
         break;
-        case 'Center': {
+        case 'center': {
             alignStyle = {
                 alignItems: 'center',
                 flexDirection: 'column',
@@ -32,14 +47,19 @@ const ContentText = (props) => {
     }
 
   return (
-    <View style={[alignStyle]}>
-      <Text style={[TypoSkin.title3]}>{titleContent}</Text>
-      {(subTitle === 'Yes') && <Text style={[TypoSkin.Subtitle3]}>{subTitleContent}</Text>}
-      {(body === 'Yes') && <Text style={[TypoSkin.body]}>{bodyContent}</Text>}
+    <View style={[styles.container, alignStyle]}>
+      <Text style={[TypoSkin.title3, {textAlign: contentAlign}]}>{titleContent}</Text>
+      {(subTitleContent) && <Text style={[TypoSkin.Subtitle3, {textAlign: contentAlign}]}>{subTitleContent}</Text>}
+      {(bodyContent) && <Text style={[TypoSkin.body, {textAlign: contentAlign}]}>{bodyContent}</Text>}
     </View>
   )
 }
 
 export default ContentText
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        // height: 'auto',
+        // width: 'auto',
+    }
+})

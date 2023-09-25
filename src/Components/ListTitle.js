@@ -1,79 +1,89 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import MediaView from './MediaView'
-import ContentText from './ContentText'
-import CustomButton from './CustomButton'
-import ColorsSkin from '../../Styles/ColorsSkin'
+import ColorsSkin from '../../Styles/ColorsSkin';
+import ColorsStyle from '../../Styles/ColorsStyle';
+import PropTypes from "prop-types"
+import CustomButton from './CustomButton';
+import MediaView from './MediaView';
+import ContentText from './ContentText';
 
-const ListTitle = (props) => {
+ListTitle.propTypes = {
+  leftMedia: PropTypes.string,
+  rightMedia: PropTypes.string,
+  buttonContent: PropTypes.string,
+  titleContent: PropTypes.string,
+  subTitleContent: PropTypes.string,
+  contentAlign: PropTypes.string,
+  buttonIconUri: PropTypes.string,
+  buttonText: PropTypes.string,
+}
 
-    const {style, contentViewAlign, withMedia, mediaUri, titleContent, subTitleContent, bodyContent} = props;
-    let contentViewAlignStyle;
-    const flexContent = (contentViewAlign === 'Center')? {flex: 0}:{flex: 1};
+ListTitle.defaultProps = {
+  leftMedia: '',
+  rightMedia: '',
+  buttonContent: '',
+  titleContent: 'Title',
+  subTitleContent: '',
+  contentAlign: 'Left',
+  buttonIconUri: '',
+  buttonText: 'Change action view'
+}
 
-    switch (contentViewAlign) {
-        case 'Left': {
-            contentViewAlignStyle = {
-                flexDirection: 'row',
-                justifyContent: 'space-between',
-            }
-        }
-        break;
+function ListTitle(props) {
 
-        case 'Right': {
-            contentViewAlignStyle = {
-                flexDirection: 'row-reverse',
-                justifyContent: 'space-between',
-            }
-        }
-        break;
+  const {  
+    leftMedia,
+    rightMedia,
+    buttonContent,
+    titleContent,
+    subTitleContent,
+    contentAlign,
+    buttonIconUri,
+    buttonText,
+  } = props;
 
-        case 'Center': {
-            contentViewAlignStyle = {
-                flexDirection: (withMedia === 'Yes')? 'row':null,
-                justifyContent: 'space-between',
-                padding: (withMedia === 'Yes')? null:5,
-            }
-        }
-    }
-    
   return (
-    <View style={[styles.container, contentViewAlignStyle]}>
-
-      {(withMedia === 'Yes') && <View style={[styles.media]}>  
+    <View style={[styles.container]}>
+      {(leftMedia) && <View style={styles.leftMedia}>
         <MediaView
-            style='BoundingBoxCircle'
-            size={32}
-        ></MediaView>
+          size={30}
+          style={'BoundingBoxCircle'}
+          mediaUri={leftMedia}
+        />
       </View>}
 
-      <View style={[styles.content, contentViewAlignStyle, flexContent]}>
-        <ContentText
-            contentAlign={contentViewAlign}
-            subTitle='No'
-            body='No'
-            titleContent={titleContent}
-            subTitleContent={subTitleContent}
-            bodyContent={bodyContent}
-        ></ContentText>
-
-        {!(contentViewAlign === 'Center') && <CustomButton
+      <View style={[styles.content, {justifyContent: (contentAlign === 'center')? 'center':'space-between'}]}>
+        {(contentAlign === 'right') && <CustomButton
             style='TextAction'
-            size={48}
+            size={24}
             state='Primary'
             position='IconRight'
-            content='Button'
-            iconUri={mediaUri}
+            content={buttonText}
+            iconUri={buttonIconUri}
+        ></CustomButton> }
+
+        <ContentText
+          contentAlign={contentAlign}
+          titleContent={titleContent}
+          subTitleContent={subTitleContent}
+        />
+
+        {(contentAlign === 'left') && <CustomButton
+            style='TextAction'
+            size={24}
+            position='IconRight'
+            content={buttonText}
+            iconUri={buttonIconUri}
         ></CustomButton>}
       </View>
 
-        {(withMedia === 'Yes') && (contentViewAlign === 'Center') && <View style={[styles.media]}>  
-            <MediaView
-                style='BoundingBoxCircle'
-                size={32}
-            ></MediaView>
-        </View>}
-
+      {(rightMedia) && <View style={styles.rightMedia}>
+        <MediaView
+          size={30}
+          style={'BoundingBoxCircle'}
+          mediaUri={rightMedia}
+        />
+      </View>}
     </View>
   )
 }
@@ -82,19 +92,34 @@ export default ListTitle
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: ColorsSkin.Gray_1Background,
+        width: '90%',
         height: 'auto',
-        width: '100%',
+        position: 'relative',
+        backgroundColor: ColorsSkin.Gray_1Background,
+        flexDirection: 'row',
         alignItems: 'center',
-        borderRadius: 8,
-        //backgroundColor: 'pink'
+        padding: 5,
+
     },
     content: {
+        flex: 1,
+        paddingLeft: 0,
+        paddingRight: 0,
+        flexDirection: 'row',
         alignItems: 'center',
     },
-    media: {
-        padding: 12,
-        alignItems: 'center',
-        justifyContent: 'center',
+    leftMedia: {
+      width: '10%',
+      alignItems: 'center',
+      flex: 0,
+      paddingRight: 5,
+    },
+    rightMedia: {
+      width: '10%',
+      alignItems: 'center',
+      alignContent: 'center',
+      flex: 0,
+      paddingLeft: 5,
     }
+
 })

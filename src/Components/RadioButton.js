@@ -5,7 +5,7 @@ import ColorsSkin from '../../Styles/ColorsSkin';
 import ColorsStyle from '../../Styles/ColorsStyle';
 import PropTypes from "prop-types";
 
-RadioButton.PropTypes = {
+RadioButton.propTypes = {
     size: PropTypes.number,
     check: PropTypes.bool,
     state: PropTypes.string,
